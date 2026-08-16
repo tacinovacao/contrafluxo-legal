@@ -68,17 +68,21 @@
     font-weight: 800;
     font-size: 22px;
     color: var(--branco);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .logo-inova {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 22px;
     color: var(--azul);
-    background: rgba(64,196,255,0.08);
-    border: 1px solid rgba(64,196,255,0.25);
-    border-radius: 6px;
-    padding: 3px 10px;
+    letter-spacing: 1px;
+  }
+
+  .logo-marca {
+    display: inline-flex;
+    align-items: center;
   }
 
   .separador-header {
@@ -413,8 +417,7 @@
 
 <header>
   <div class="logo-linha">
-    <div class="logo-tac">TAC</div>
-    <div class="logo-inova">{inova}</div>
+    <div class="logo-marca"><span class="logo-tac">TAC</span><span class="logo-inova">inova</span></div>
     <div class="separador-header"></div>
     <div class="app-nome">ContraFluxo</div>
   </div>
