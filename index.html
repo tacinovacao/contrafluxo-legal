@@ -421,7 +421,7 @@
   <h1>Política de <span>Privacidade</span></h1>
   <p class="subtitulo">Transparência total sobre como tratamos seus dados</p>
   <div class="data-badge">
-    📅 Última atualização: 26 de março de 2026
+    📅 Última atualização: 13 de agosto de 2026
   </div>
 </header>
 
@@ -450,6 +450,13 @@
         <div class="resumo-texto">O Google Drive é usado apenas se você escolher ativar o backup. Você controla tudo.</div>
       </div>
     </div>
+    <div class="resumo-item">
+      <div class="resumo-icone">🗑️</div>
+      <div>
+        <div class="resumo-titulo">Exclusão de conta</div>
+        <div class="resumo-texto">Exclua sua conta e dados vinculados a qualquer momento, pelo app ou por e-mail. <a href="#exclusao-conta" style="color:var(--azul)">Veja como →</a></div>
+      </div>
+    </div>
   </div>
 
   <!-- 1. Introdução -->
@@ -475,7 +482,7 @@
       <h2>Quais dados o app utiliza</h2>
     </div>
     <div class="secao-body">
-      <p>O ContraFluxo <strong>não coleta dados pessoais identificáveis</strong> nem envia informações a servidores próprios. Todas as informações inseridas no app (ganhos, despesas, metas, dívidas) são armazenadas exclusivamente no dispositivo do usuário.</p>
+      <p>O ContraFluxo <strong>não coleta dados financeiros pessoais identificáveis</strong> em servidores próprios. Os dados financeiros inseridos no app (ganhos, despesas, metas, dívidas) são armazenados exclusivamente no dispositivo do usuário. Já os dados técnicos e de conta descritos abaixo podem trafegar pela infraestrutura Firebase (Google), utilizada pela TAC inova para autenticação, controle de assinatura e estabilidade do app — nunca para fins publicitários.</p>
 
       <table class="tabela-dados">
         <tr>
@@ -498,9 +505,34 @@
           <td><span class="tag-azul">Google Drive pessoal</span></td>
           <td>Backup e restauração de dados</td>
         </tr>
+        <tr>
+          <td>Identificador de conta (UID), status do período de teste e status da assinatura Premium</td>
+          <td><span class="tag-azul">Firebase (banco de dados da TAC inova)</span></td>
+          <td>Impedir reinício do período de teste por reinstalação e sincronizar o acesso Premium entre dispositivos da mesma conta</td>
+        </tr>
+        <tr>
+          <td>Identificador do aparelho (Android ID)<br><small style="color:var(--muted)">vinculado à conta Google que ativou o teste</small></td>
+          <td><span class="tag-azul">Firebase (banco de dados da TAC inova)</span></td>
+          <td>Impedir que o mesmo aparelho reinicie o período de teste grátis com outra conta Google</td>
+        </tr>
+        <tr>
+          <td>Comando de voz (áudio)<br><small style="color:var(--muted)">(registro de ganhos/despesas falado)</small></td>
+          <td><span class="tag-verde">Processado pelo sistema (Google), não enviado à TAC inova</span></td>
+          <td>Preencher ganhos e despesas por comando de voz, como alternativa à digitação</td>
+        </tr>
+        <tr>
+          <td>Relatórios técnicos de falhas<br><small style="color:var(--muted)">(modelo do aparelho, versão do sistema, versão do app, trechos de código com erro)</small></td>
+          <td><span class="tag-azul">Firebase Crashlytics</span></td>
+          <td>Identificar e corrigir travamentos e erros do app</td>
+        </tr>
       </table>
 
-      <p>Nenhum dado é transmitido a servidores da TAC inova ou a qualquer outra empresa.</p>
+      <p>Nenhum dado financeiro inserido no app é transmitido a servidores da TAC inova ou de terceiros. Os dados técnicos e de conta acima trafegam apenas pela infraestrutura Firebase (Google Cloud) descrita na seção 4, e não são vendidos, usados para publicidade ou compartilhados com outras empresas.</p>
+
+      <div class="destaque roxo">
+        <span class="destaque-icone">🎙️</span>
+        <span>O ContraFluxo oferece um <strong>assistente por comando de voz</strong>, opcional, para registrar ganhos e despesas falando em vez de digitar. O áudio é processado pelo motor de reconhecimento de voz do próprio sistema operacional (Google), da mesma forma que qualquer outro app que use o microfone do aparelho — a TAC inova não grava, armazena nem tem acesso ao áudio captado. A interpretação do texto reconhecido (identificar valores, km, corridas etc.) acontece <strong>100% no dispositivo</strong>, sem envio a nenhum servidor.</span>
+      </div>
     </div>
   </div>
 
@@ -528,10 +560,32 @@
     </div>
   </div>
 
-  <!-- 4. Permissões -->
+  <!-- 4. Firebase -->
   <div class="secao">
     <div class="secao-header">
       <span class="secao-num">04</span>
+      <h2>Serviços Firebase (Google)</h2>
+    </div>
+    <div class="secao-body">
+      <p>O ContraFluxo utiliza serviços da plataforma <strong>Firebase</strong>, do Google, operados pela TAC inova, para funções técnicas do app:</p>
+      <ul class="lista">
+        <li><strong>Firebase Authentication</strong> — identifica a conta Google do usuário quando o login é realizado, sem acesso à senha</li>
+        <li><strong>Firebase Realtime Database</strong> — armazena, vinculado ao identificador da conta, apenas o status do período de teste e o status da assinatura Premium (não armazena dados financeiros)</li>
+        <li><strong>Firebase Crashlytics</strong> — coleta relatórios técnicos de falhas (erros e travamentos) para que a TAC inova possa corrigir problemas do app</li>
+        <li><strong>Firebase Remote Config</strong> — permite exibir avisos e novidades dentro do app, sem envio de dados do usuário</li>
+      </ul>
+      <div class="destaque azul">
+        <span class="destaque-icone">🔥</span>
+        <span>Esses serviços são hospedados pelo Google e sujeitos também à <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--azul)">Política de Privacidade do Google</a>. A TAC inova usa o Firebase apenas para autenticação, controle de assinatura e estabilidade do app — nunca para publicidade ou venda de dados.</span>
+      </div>
+      <p>Os relatórios de falha e os dados de conta não incluem valores, descrições de despesas/ganhos ou qualquer outra informação financeira inserida pelo usuário.</p>
+    </div>
+  </div>
+
+  <!-- 5. Permissões -->
+  <div class="secao">
+    <div class="secao-header">
+      <span class="secao-num">05</span>
       <h2>Permissões solicitadas</h2>
     </div>
     <div class="secao-body">
@@ -545,6 +599,16 @@
           <td>Notificações</td>
           <td>Lembretes diários de meta configurados pelo usuário</td>
           <td>Não — app funciona sem ela</td>
+        </tr>
+        <tr>
+          <td>Microfone</td>
+          <td>Assistente por comando de voz, para registrar ganhos e despesas falando (processado pelo próprio sistema, veja seção 2)</td>
+          <td>Não — usada só quando o usuário ativa o comando de voz</td>
+        </tr>
+        <tr>
+          <td>Exibir sobre outros apps (sobreposição de tela)</td>
+          <td>Botão flutuante opcional para acesso rápido ao registro de ganhos, sem precisar abrir o app</td>
+          <td>Não — recurso opcional, pode ser desativado nas configurações</td>
         </tr>
         <tr>
           <td>Acesso à internet</td>
@@ -563,7 +627,7 @@
   <!-- 5. Compartilhamento -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">05</span>
+      <span class="secao-num">06</span>
       <h2>Compartilhamento de dados</h2>
     </div>
     <div class="secao-body">
@@ -571,14 +635,15 @@
         <span class="destaque-icone">🚫</span>
         <span><strong>A TAC inova não vende, aluga, cede nem compartilha seus dados pessoais com terceiros</strong> para fins comerciais ou de qualquer outra natureza.</span>
       </div>
-      <p>Os dados inseridos no ContraFluxo não são enviados a servidores da TAC inova, não são usados para fins publicitários, não são analisados por ferramentas de analytics e não são compartilhados com parceiros comerciais.</p>
+      <p>Os dados financeiros inseridos no ContraFluxo não são enviados a servidores da TAC inova, não são usados para fins publicitários, não são analisados por ferramentas de analytics e não são compartilhados com parceiros comerciais.</p>
+      <p>Os únicos dados que trafegam fora do dispositivo são os descritos nas seções 2 e 4 (conta, status de assinatura e relatórios técnicos de falha), processados pelo Firebase/Google exclusivamente como infraestrutura técnica da TAC inova — o Google não utiliza esses dados para publicidade em nome da TAC inova.</p>
     </div>
   </div>
 
   <!-- 6. Segurança -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">06</span>
+      <span class="secao-num">07</span>
       <h2>Segurança dos dados</h2>
     </div>
     <div class="secao-body">
@@ -599,7 +664,7 @@
   <!-- 7. Menores -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">07</span>
+      <span class="secao-num">08</span>
       <h2>Uso por menores de idade</h2>
     </div>
     <div class="secao-body">
@@ -611,7 +676,7 @@
   <!-- 8. Direitos -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">08</span>
+      <span class="secao-num">09</span>
       <h2>Seus direitos (LGPD)</h2>
     </div>
     <div class="secao-body">
@@ -621,15 +686,41 @@
         <li>Excluir seus dados — basta desinstalar o app e/ou remover os arquivos do Google Drive</li>
         <li>Revogar o acesso ao Google Drive — faça logout no app ou revogue nas configurações da sua conta Google</li>
         <li>Portabilidade — os dados ficam no seu dispositivo e podem ser exportados via PDF pelo próprio app</li>
+        <li>Excluir o registro de conta no Firebase (status de teste/assinatura) — veja a seção 10, abaixo</li>
       </ul>
-      <p>Como a TAC inova não armazena seus dados em servidores próprios, todas as ações de controle estão diretamente nas mãos do usuário, sem necessidade de solicitação à TAC inova.</p>
+      <p>Os dados financeiros ficam sob controle direto do usuário, sem necessidade de solicitação à TAC inova. Já a exclusão do identificador de conta e do status de assinatura armazenados no Firebase segue o processo descrito na seção 10.</p>
     </div>
   </div>
 
-  <!-- 9. Alterações -->
+  <!-- 10. Exclusão de Conta e Dados -->
+  <div class="secao" id="exclusao-conta">
+    <div class="secao-header">
+      <span class="secao-num">10</span>
+      <h2>Exclusão de Conta e Dados</h2>
+    </div>
+    <div class="secao-body">
+      <p>Você pode excluir sua conta e os dados vinculados a ela a qualquer momento, de duas formas:</p>
+
+      <div class="destaque verde">
+        <span class="destaque-icone">📱</span>
+        <span><strong>Direto no app:</strong> abra o ContraFluxo → <strong>Sobre</strong> → <strong>"Excluir minha conta e dados"</strong>. Confirme a ação e pronto — o registro da sua conta no Firebase (status de teste grátis e de assinatura Premium) é apagado e sua conta Google é desconectada do app.</span>
+      </div>
+
+      <div class="destaque azul">
+        <span class="destaque-icone">🌐</span>
+        <span><strong>Sem precisar abrir o app:</strong> envie um e-mail para <strong>tac.inovacao@gmail.com</strong> a partir do endereço de e-mail vinculado à sua conta Google usada no app, solicitando a exclusão. A TAC inova confirma e remove o registro em até 5 dias úteis.</span>
+      </div>
+
+      <p><strong>O que é excluído:</strong> o identificador da sua conta, o identificador do aparelho vinculado ao teste grátis, o status do período de teste grátis e o status da assinatura Premium, armazenados no Firebase.</p>
+      <p><strong>O que não é excluído por essa via:</strong> os dados financeiros (ganhos, despesas, metas, dívidas) ficam salvos apenas no seu dispositivo e não são alcançados por essa exclusão de conta — para removê-los, desinstale o app ou apague-os pelas telas do próprio app. Um backup já salvo no seu Google Drive pessoal também não é apagado automaticamente; remova-o pelo próprio Google Drive, se desejar.</p>
+      <p>Se você tinha uma assinatura Premium ativa no momento da exclusão, ela deixa de ser reconhecida pelo app — cancele também a cobrança recorrente na Google Play Store em "Gerenciar assinaturas", se aplicável.</p>
+    </div>
+  </div>
+
+  <!-- 11. Alterações -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">09</span>
+      <span class="secao-num">11</span>
       <h2>Alterações nesta política</h2>
     </div>
     <div class="secao-body">
@@ -652,6 +743,9 @@
 
 <footer>
   © 2026 <span>TAC inova</span> · ContraFluxo · Todos os direitos reservados
+  <div class="links" style="display:flex; justify-content:center; gap:16px; margin-top:10px; flex-wrap:wrap;">
+    <a href="../termos-de-uso/termos.html" style="color:var(--muted); text-decoration:none; font-size:11px;">Termos de Uso</a>
+  </div>
 </footer>
 
 </body>
