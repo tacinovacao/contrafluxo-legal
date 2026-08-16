@@ -13,8 +13,9 @@
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,109,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,109,0,.025) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
   header{position:relative;z-index:1;padding:60px 24px 40px;text-align:center;border-bottom:1px solid var(--borda);background:linear-gradient(180deg,rgba(255,109,0,.05) 0%,transparent 100%)}
   .logo-linha{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
-  .logo-tac{font-family:'Sora',sans-serif;font-weight:800;font-size:22px;color:var(--branco);letter-spacing:2px}
-  .logo-inova{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--azul);background:rgba(64,196,255,.08);border:1px solid rgba(64,196,255,.25);border-radius:6px;padding:3px 10px}
+  .logo-tac{font-family:'Sora',sans-serif;font-weight:800;font-size:22px;color:var(--branco);letter-spacing:1px}
+  .logo-inova{font-family:'Sora',sans-serif;font-weight:700;font-style:italic;font-size:22px;color:var(--azul);letter-spacing:1px}
+  .logo-marca{display:inline-flex;align-items:center}
   .sep{width:1px;height:24px;background:var(--borda)}
   .app-nome{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--laranja);background:rgba(255,109,0,.08);border:1px solid rgba(255,109,0,.2);border-radius:6px;padding:3px 10px}
   h1{font-size:clamp(26px,5vw,38px);font-weight:800;color:var(--branco);letter-spacing:-.5px;margin-bottom:12px}
@@ -103,8 +104,7 @@
 
 <header>
   <div class="logo-linha">
-    <div class="logo-tac">TAC</div>
-    <div class="logo-inova">{inova}</div>
+    <div class="logo-marca"><span class="logo-tac">TAC</span><span class="logo-inova">inova</span></div>
     <div class="sep"></div>
     <div class="app-nome">ContraFluxo</div>
   </div>
