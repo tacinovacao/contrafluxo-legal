@@ -424,7 +424,7 @@
   <h1>Política de <span>Privacidade</span></h1>
   <p class="subtitulo">Transparência total sobre como tratamos seus dados</p>
   <div class="data-badge">
-    📅 Última atualização: 13 de agosto de 2026
+    📅 Última atualização: 31 de agosto de 2026
   </div>
 </header>
 
@@ -442,8 +442,8 @@
     <div class="resumo-item">
       <div class="resumo-icone">🚫</div>
       <div>
-        <div class="resumo-titulo">Sem coleta</div>
-        <div class="resumo-texto">Não coletamos, vendemos nem compartilhamos seus dados com terceiros.</div>
+        <div class="resumo-titulo">Sem venda de dados</div>
+        <div class="resumo-texto">Não vendemos nem compartilhamos seus dados financeiros com terceiros, em nenhuma hipótese.</div>
       </div>
     </div>
     <div class="resumo-item">
@@ -451,6 +451,13 @@
       <div>
         <div class="resumo-titulo">Backup opcional</div>
         <div class="resumo-texto">O Google Drive é usado apenas se você escolher ativar o backup. Você controla tudo.</div>
+      </div>
+    </div>
+    <div class="resumo-item">
+      <div class="resumo-icone">📣</div>
+      <div>
+        <div class="resumo-titulo">Anúncios (Plano Básico)</div>
+        <div class="resumo-texto">Usuários gratuitos veem anúncios via Google AdMob. Assinantes Premium não veem nenhum. <a href="#publicidade" style="color:var(--azul)">Veja como →</a></div>
       </div>
     </div>
     <div class="resumo-item">
@@ -528,13 +535,28 @@
           <td><span class="tag-azul">Firebase Crashlytics</span></td>
           <td>Identificar e corrigir travamentos e erros do app</td>
         </tr>
+        <tr>
+          <td>Print de tela (imagem)<br><small style="color:var(--muted)">(Uber, 99 e apps similares, selecionado da galeria)</small></td>
+          <td><span class="tag-verde">Processado no aparelho, não enviado à TAC inova</span></td>
+          <td>Reconhecer texto na imagem (OCR local) para preencher ganhos e despesas automaticamente</td>
+        </tr>
+        <tr>
+          <td>Identificador de publicidade (Advertising ID) e dados técnicos do dispositivo<br><small style="color:var(--muted)">(apenas para usuários do Plano Básico)</small></td>
+          <td><span class="tag-azul">Google AdMob</span></td>
+          <td>Selecionar, exibir e medir anúncios dentro do app — ver seção 5</td>
+        </tr>
       </table>
 
-      <p>Nenhum dado financeiro inserido no app é transmitido a servidores da TAC inova ou de terceiros. Os dados técnicos e de conta acima trafegam apenas pela infraestrutura Firebase (Google Cloud) descrita na seção 4, e não são vendidos, usados para publicidade ou compartilhados com outras empresas.</p>
+      <p>Nenhum dado financeiro inserido no app é transmitido a servidores da TAC inova ou de terceiros. Os dados técnicos e de conta descritos nas primeiras linhas da tabela trafegam apenas pela infraestrutura Firebase (Google Cloud) descrita na seção 4, e não são vendidos nem compartilhados com outras empresas. Os dados de publicidade (última linha da tabela) são tratados à parte pela rede Google AdMob, exclusivamente para usuários do Plano Básico — ver seção 5.</p>
 
       <div class="destaque roxo">
         <span class="destaque-icone">🎙️</span>
         <span>O ContraFluxo oferece um <strong>assistente por comando de voz</strong>, opcional, para registrar ganhos e despesas falando em vez de digitar. O áudio é processado pelo motor de reconhecimento de voz do próprio sistema operacional (Google), da mesma forma que qualquer outro app que use o microfone do aparelho — a TAC inova não grava, armazena nem tem acesso ao áudio captado. A interpretação do texto reconhecido (identificar valores, km, corridas etc.) acontece <strong>100% no dispositivo</strong>, sem envio a nenhum servidor.</span>
+      </div>
+
+      <div class="destaque azul">
+        <span class="destaque-icone">🧾</span>
+        <span>O ContraFluxo também oferece a <strong>importação de ganhos por print de tela</strong>, opcional: o usuário seleciona uma captura de tela (da galeria do aparelho) do app de corrida, e o próprio aplicativo reconhece os valores por OCR (leitura de texto em imagem) executado <strong>100% no dispositivo</strong>. A imagem nunca é enviada à TAC inova, ao Firebase ou a qualquer servidor — o resultado do reconhecimento sempre passa por revisão do usuário antes de ser salvo.</span>
       </div>
     </div>
   </div>
@@ -585,10 +607,40 @@
     </div>
   </div>
 
-  <!-- 5. Permissões -->
-  <div class="secao">
+  <!-- 5. Publicidade -->
+  <div class="secao" id="publicidade">
     <div class="secao-header">
       <span class="secao-num">05</span>
+      <h2>Publicidade (Google AdMob)</h2>
+    </div>
+    <div class="secao-body">
+      <p>O ContraFluxo é gratuito no Plano Básico. Parte da manutenção desse plano gratuito vem da exibição de <strong>anúncios</strong>, veiculados pela rede <strong>Google AdMob</strong>: um banner fixo dentro do app e, no máximo, um anúncio em tela cheia (intersticial) por dia.</p>
+
+      <div class="destaque verde">
+        <span class="destaque-icone">⭐</span>
+        <span><strong>Assinantes do Plano Premium não veem nenhum anúncio</strong>, em nenhuma tela do app.</span>
+      </div>
+
+      <p>Para selecionar, exibir e medir o desempenho dos anúncios, o Google AdMob pode coletar automaticamente, no aparelho do usuário do Plano Básico:</p>
+      <ul class="lista">
+        <li>Identificador de publicidade do Android (Advertising ID)</li>
+        <li>Endereço IP e dados aproximados de localização derivados dele</li>
+        <li>Informações do dispositivo (modelo, sistema operacional) e dados de interação com o anúncio (impressões, cliques)</li>
+      </ul>
+
+      <div class="destaque azul">
+        <span class="destaque-icone">🔒</span>
+        <span>Nenhum dado financeiro do ContraFluxo (ganhos, despesas, metas, dívidas) é compartilhado com o Google AdMob ou com anunciantes. Essa coleta é feita e tratada diretamente pelo Google, como operador da rede de anúncios, e está sujeita à <a href="https://policies.google.com/technologies/ads" target="_blank" style="color:var(--azul)">Política de Publicidade do Google</a> e à <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--azul)">Política de Privacidade do Google</a>. A TAC inova não tem acesso individualizado a esses dados — apenas a métricas agregadas de desempenho dos anúncios.</span>
+      </div>
+
+      <p>Para limitar a personalização de anúncios ou redefinir seu identificador de publicidade, acesse as configurações de anúncios da sua conta Google em <a href="https://adssettings.google.com" target="_blank" style="color:var(--azul)">adssettings.google.com</a> ou, no aparelho Android, em Configurações → Google → Anúncios.</p>
+    </div>
+  </div>
+
+  <!-- 6. Permissões -->
+  <div class="secao">
+    <div class="secao-header">
+      <span class="secao-num">06</span>
       <h2>Permissões solicitadas</h2>
     </div>
     <div class="secao-body">
@@ -623,14 +675,20 @@
           <td>Autenticação para uso do Google Drive</td>
           <td>Não — apenas para backup</td>
         </tr>
+        <tr>
+          <td>Fotos / Galeria</td>
+          <td>Selecionar um print de tela salvo no aparelho para importar ganhos por OCR local (veja seção 2)</td>
+          <td>Não — usada só quando o usuário escolhe importar um print</td>
+        </tr>
       </table>
+      <p style="margin-top:14px;font-size:13px;color:var(--muted)">A rede de anúncios Google AdMob (seção 5) não solicita uma permissão própria: ela usa o identificador de publicidade do sistema, disponível automaticamente para apps que exibem anúncios.</p>
     </div>
   </div>
 
-  <!-- 5. Compartilhamento -->
+  <!-- 7. Compartilhamento -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">06</span>
+      <span class="secao-num">07</span>
       <h2>Compartilhamento de dados</h2>
     </div>
     <div class="secao-body">
@@ -638,15 +696,15 @@
         <span class="destaque-icone">🚫</span>
         <span><strong>A TAC inova não vende, aluga, cede nem compartilha seus dados pessoais com terceiros</strong> para fins comerciais ou de qualquer outra natureza.</span>
       </div>
-      <p>Os dados financeiros inseridos no ContraFluxo não são enviados a servidores da TAC inova, não são usados para fins publicitários, não são analisados por ferramentas de analytics e não são compartilhados com parceiros comerciais.</p>
-      <p>Os únicos dados que trafegam fora do dispositivo são os descritos nas seções 2 e 4 (conta, status de assinatura e relatórios técnicos de falha), processados pelo Firebase/Google exclusivamente como infraestrutura técnica da TAC inova — o Google não utiliza esses dados para publicidade em nome da TAC inova.</p>
+      <p>Os dados financeiros inseridos no ContraFluxo <strong>nunca</strong> são enviados a servidores da TAC inova, não são usados para fins publicitários, não são analisados por ferramentas de analytics e não são compartilhados com parceiros comerciais.</p>
+      <p>Os dados que trafegam fora do dispositivo são apenas os descritos nas seções 2, 4 e 5: (a) conta, status de assinatura e relatórios técnicos de falha, processados pelo Firebase/Google exclusivamente como infraestrutura técnica da TAC inova — o Google não utiliza esses dados para publicidade em nome da TAC inova; e (b) para usuários do Plano Básico, identificadores de publicidade tratados diretamente pelo Google AdMob para exibição de anúncios, sem qualquer dado financeiro envolvido.</p>
     </div>
   </div>
 
-  <!-- 6. Segurança -->
+  <!-- 8. Segurança -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">07</span>
+      <span class="secao-num">08</span>
       <h2>Segurança dos dados</h2>
     </div>
     <div class="secao-body">
@@ -667,7 +725,7 @@
   <!-- 7. Menores -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">08</span>
+      <span class="secao-num">09</span>
       <h2>Uso por menores de idade</h2>
     </div>
     <div class="secao-body">
@@ -679,7 +737,7 @@
   <!-- 8. Direitos -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">09</span>
+      <span class="secao-num">10</span>
       <h2>Seus direitos (LGPD)</h2>
     </div>
     <div class="secao-body">
@@ -689,16 +747,16 @@
         <li>Excluir seus dados — basta desinstalar o app e/ou remover os arquivos do Google Drive</li>
         <li>Revogar o acesso ao Google Drive — faça logout no app ou revogue nas configurações da sua conta Google</li>
         <li>Portabilidade — os dados ficam no seu dispositivo e podem ser exportados via PDF pelo próprio app</li>
-        <li>Excluir o registro de conta no Firebase (status de teste/assinatura) — veja a seção 10, abaixo</li>
+        <li>Excluir o registro de conta no Firebase (status de teste/assinatura) — veja a seção 11, abaixo</li>
       </ul>
-      <p>Os dados financeiros ficam sob controle direto do usuário, sem necessidade de solicitação à TAC inova. Já a exclusão do identificador de conta e do status de assinatura armazenados no Firebase segue o processo descrito na seção 10.</p>
+      <p>Os dados financeiros ficam sob controle direto do usuário, sem necessidade de solicitação à TAC inova. Já a exclusão do identificador de conta e do status de assinatura armazenados no Firebase segue o processo descrito na seção 11.</p>
     </div>
   </div>
 
-  <!-- 10. Exclusão de Conta e Dados -->
+  <!-- 11. Exclusão de Conta e Dados -->
   <div class="secao" id="exclusao-conta">
     <div class="secao-header">
-      <span class="secao-num">10</span>
+      <span class="secao-num">11</span>
       <h2>Exclusão de Conta e Dados</h2>
     </div>
     <div class="secao-body">
@@ -720,10 +778,10 @@
     </div>
   </div>
 
-  <!-- 11. Alterações -->
+  <!-- 12. Alterações -->
   <div class="secao">
     <div class="secao-header">
-      <span class="secao-num">11</span>
+      <span class="secao-num">12</span>
       <h2>Alterações nesta política</h2>
     </div>
     <div class="secao-body">
